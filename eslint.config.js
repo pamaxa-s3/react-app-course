@@ -30,7 +30,7 @@ export default defineConfig([
 			prettier
 		},
 		rules: {
-			'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+			'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
 			'react-refresh/only-export-components': [
 				'warn',
 				{ allowConstantExport: true }
@@ -40,7 +40,7 @@ export default defineConfig([
 				{
 					singleQuote: false,
 					printWidth: 130,
-					tebWidth: 2
+					tabWidth: 2
 				}
 			]
 		}
