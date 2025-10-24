@@ -7,6 +7,7 @@ import { Forbiden } from '@page/Forbiden';
 import { ErrorBoundary } from '@page/ErrorBoundary';
 import { QuestionPage } from '@page/QuestionPage';
 import { NotFound } from '@page/NotFound';
+import { getQuestions} from '@loaders/questionsLoader'
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				element: <Home />,
+				loader: getQuestions,
 				errorElement: <ErrorBoundary />
 			},
 			{
