@@ -5,8 +5,10 @@
 	--btn-bg-color: #383b3f;
 	--btn-text-color: #fff;
 
-	--shadow-top: 0 2px 8px 0 rgba (0, 0, 0, 0.2);
-	--shadow-bottom: 0 -2px 8px 0 rgba (0, 0, 0, 0.2);
+	--card-bg-color: #343a46;
+
+	--shadow-top: 0 0 8px 5px rgba(0, 0, 0, 0.1);
+	--shadow-bottom: 0 0 8px 5px rgba(0, 0, 0, 0.1);
 
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -44,8 +46,10 @@ body {
 		--btn-bg-color: #16444f;
 		--btn-text-color: #57c4dc;
 
-		--shadow-top: 0 2px 8px 0 rgba (0, 0, 0, 0.2);
-		--shadow-bottom: 0 -2px 8px 0 rgba (0, 0, 0, 0.2);
+		--card-bg-color: #ebedf0;
+
+		--shadow-top: 0 0 8px 5px rgba(0, 0, 0, 0.1);
+		--shadow-bottom: 0 0 8px 5px rgba(0, 0, 0, 0.1);
 	}
 }
 
@@ -57,7 +61,9 @@ body {
 		--btn-bg-color: #383b3f;
 		--btn-text-color: #fff;
 
-		--shadow-top: 0 2px 8px rgba 0 (0, 0, 0, 0.2);
-		--shadow-bottom: 0 -2px 8px rgba 0  (0, 0, 0, 0.2);
+		--card-bg-color: #343a46;
+
+		--shadow-top: 0 0 8px 5px rgba(0, 0, 0, 0.1);
+		--shadow-bottom: 0 0 8px 5px rgba(0, 0, 0, 0.1);
 	}
 }
