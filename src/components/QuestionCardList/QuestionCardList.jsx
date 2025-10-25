@@ -13,6 +13,7 @@ export const QuestionCardList = () => {
 		cardsLoaded && setCards(cardsLoaded);
 
 	}, [])
+
 	return (
 		<div className={cls.cardList}>
 			{cards.map(card => {
