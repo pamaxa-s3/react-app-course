@@ -2,6 +2,7 @@ import { QuestionCard } from '@components/QuestionCard';
 import cls from './Home.module.css';
 import { useLoaderData } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { QuestionCardList } from '@components/QuestionCardList';
 
 // const cards = [
 // 	{
@@ -52,19 +53,11 @@ import { useEffect, useState } from 'react';
 
 
 export const Home = () => {
-	const [cards, setCards] = useState([]);
-	const cardsLoaded = useLoaderData();
 
-	useEffect(() => {
-		cardsLoaded && setCards(cardsLoaded);
-
-	}, [])
 
 	return (
 		<>
-			{cards.map(card => {
-				return <QuestionCard card={card} key={card.id} />;
-			})}
+			<QuestionCardList />
 		</>
 	);
 };
