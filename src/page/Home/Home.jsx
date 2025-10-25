@@ -1,7 +1,9 @@
 import { QuestionCard } from '@components/QuestionCard';
 import cls from './Home.module.css';
+import { useLoaderData } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-const cards = [
+// const cards = [
 // 	{
 // 		id: '1',
 // 		question: 'Что такое React?',
@@ -46,14 +48,23 @@ const cards = [
 // 		completed: false,
 // 		editDate: '21.02.2025, 20:26'
 // 	}
-];
+// ];
+
 
 export const Home = () => {
+	const [cards, setCards] = useState([]);
+	const cardsLoaded = useLoaderData();
+
+	useEffect(() => {
+		cardsLoaded && setCards(cardsLoaded);
+
+	}, [])
+
 	return (
 		<>
-				{cards.map(card => {
-					return <QuestionCard card={card} key={card.id} />;
-				})}
+			{cards.map(card => {
+				return <QuestionCard card={card} key={card.id} />;
+			})}
 		</>
 	);
 };

@@ -7,7 +7,7 @@ import { Forbiden } from '@page/Forbiden';
 import { ErrorBoundary } from '@page/ErrorBoundary';
 import { QuestionPage } from '@page/QuestionPage';
 import { NotFound } from '@page/NotFound';
-import { getQuestions} from '@loaders/questionsLoader'
+import { getQuestions } from '@loaders/questionsLoader.js';
 
 const router = createBrowserRouter([
 	{
