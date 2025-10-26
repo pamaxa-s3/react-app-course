@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { QuestionCard } from '@components/QuestionCard'
 
 import cls from './QuestionCardList.module.css'
 
-export const QuestionCardList = () => {
-
+export const QuestionCardList = memo(() => {
 	const [cards, setCards] = useState([]);
 	const cardsLoaded = useLoaderData();
 
@@ -21,4 +20,4 @@ export const QuestionCardList = () => {
 			})}
 		</div>
 	)
-}
+})

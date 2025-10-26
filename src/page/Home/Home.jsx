@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import { QuestionCard } from '@components/QuestionCard';
-import cls from './Home.module.css';
-import { useLoaderData } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { QuestionCardList } from '@components/QuestionCardList';
+import cls from './Home.module.css';
+import { SearchInput } from '@components/SearchInput';
 
 // const cards = [
 // 	{
@@ -53,10 +53,17 @@ import { QuestionCardList } from '@components/QuestionCardList';
 
 
 export const Home = () => {
+	const [searchValue, setSearchValue] = useState('');
+	function onInputChangeHandler(e) {
+		setSearchValue(e.target.value)
+	}
 
 
 	return (
 		<>
+			<div className={cls.controlsContainer}>
+				<SearchInput value={searchValue} onChange={onInputChangeHandler} placeholder='search...' />
+			</div>
 			<QuestionCardList />
 		</>
 	);
