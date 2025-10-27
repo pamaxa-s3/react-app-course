@@ -1,23 +1,28 @@
-import { useState, useEffect, memo } from 'react'
+import { useState, useEffect, memo, useMemo } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { QuestionCard } from '@components/QuestionCard'
 
 import cls from './QuestionCardList.module.css'
 
-export const QuestionCardList = memo(() => {
+export const QuestionCardList = memo(({ searchValue }) => {
 	const [cards, setCards] = useState([]);
-	const cardsLoaded = useLoaderData();
+	const { questions } = useLoaderData();
 
 	useEffect(() => {
-		cardsLoaded && setCards(cardsLoaded);
+		questions && setCards(questions);
 
 	}, [])
 
+	const filterCards = useMemo(() => {
+		return cards.filter(card => card.question.toLowerCase().includes(searchValue.trim().toLowerCase()));
+	}, [cards, searchValue]);
+
 	return (
 		<div className={cls.cardList}>
-			{cards.map(card => {
+			{filterCards.length > 0 ? filterCards.map(card => {
 				return <QuestionCard card={card} key={card.id} />;
-			})}
+			}) : <p className={cls.noCardsInfo}>No cards of serch</p>
+			}
 		</div>
 	)
 })

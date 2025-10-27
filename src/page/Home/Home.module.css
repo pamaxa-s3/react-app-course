@@ -8,3 +8,9 @@
 	align-items: center;
 	gap: 10px;
 }
+
+@media (max-width: 576px){
+	.controlsContainer {
+		flex-wrap: wrap-reverse;
+	}
+}

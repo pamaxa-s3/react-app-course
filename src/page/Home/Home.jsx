@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { QuestionCard } from '@components/QuestionCard';
 import { QuestionCardList } from '@components/QuestionCardList';
-import cls from './Home.module.css';
 import { SearchInput } from '@components/SearchInput';
+import { SortCard } from '@components/SortCard';
+import cls from './Home.module.css';
 
 // const cards = [
 // 	{
@@ -54,17 +54,18 @@ import { SearchInput } from '@components/SearchInput';
 
 export const Home = () => {
 	const [searchValue, setSearchValue] = useState('');
+
 	function onInputChangeHandler(e) {
 		setSearchValue(e.target.value)
 	}
-
 
 	return (
 		<>
 			<div className={cls.controlsContainer}>
 				<SearchInput value={searchValue} onChange={onInputChangeHandler} placeholder='search...' />
+				<SortCard />
 			</div>
-			<QuestionCardList />
+			<QuestionCardList searchValue={searchValue} />
 		</>
 	);
 };
