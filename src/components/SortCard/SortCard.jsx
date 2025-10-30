@@ -1,20 +1,20 @@
-import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom';
 import cls from './SortCard.module.css'
-import { useLoaderData, useNavigate } from 'react-router-dom';
 
 export const SortCard = () => {
-	const { question, sort } = useLoaderData();
-	const [sortSelectValue, setSortSelectValue] = useState(`${sort || ''}`);
-	const navigate = useNavigate();
+
+	const [searchParams, setSearchParams] = useSearchParams();
+	const sortValue = searchParams.get('_sort') || '';
 
 	const onSortSelectValueHandler = (e) => {
 		const sortValue = e.target.value;
-		setSortSelectValue(sortValue);
-		navigate(`?_sort=${sortValue}`);
+		const params = {};
+		if (sortValue.length) params._sort = sortValue;
+		setSearchParams(params);
 	}
 
 	return (
-		<select value={sortSelectValue} onChange={onSortSelectValueHandler} className={cls.select}>
+		<select value={sortValue} onChange={onSortSelectValueHandler} className={cls.select}>
 			<option value={''}>sort by</option>
 			<hr />
 			<option value={'level'}>level ASC</option>

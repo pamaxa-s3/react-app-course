@@ -9,9 +9,9 @@ export const QuestionCardList = memo(({ searchValue }) => {
 	const { questions } = useLoaderData();
 
 	useEffect(() => {
-		questions && setCards(questions);
-
+		questions && setCards(questions.data);
 	}, [])
+
 
 	const filterCards = useMemo(() => {
 		return cards.filter(card => card.question.toLowerCase().includes(searchValue.trim().toLowerCase()));
