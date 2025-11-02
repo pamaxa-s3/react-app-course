@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { QuestionCardList } from '@components/QuestionCardList';
 import { SearchInput } from '@components/SearchInput';
 import { SortCard } from '@components/SortCard';
-import cls from './Home.module.css';
+import { SelectPerPage } from '@components/SelectPerPage';
 import { Pagination } from '@components/Pagination';
-import { SelectPerPage } from '@components/SelectPerPage/SelectPerPage';
+import cls from './Home.module.css';
 
 export const Home = () => {
 	const [searchValue, setSearchValue] = useState('');

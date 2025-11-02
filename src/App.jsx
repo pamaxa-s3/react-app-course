@@ -28,7 +28,8 @@ const router = createBrowserRouter([
 			{
 				path: 'question/:id',
 				element: <QuestionPage />,
-				errorElement: <ErrorBoundary />
+				loader: getQuestions,
+				errorElement: <ErrorBoundary />,
 			},
 			{
 				path: 'addquestion',

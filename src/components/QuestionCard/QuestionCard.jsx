@@ -4,7 +4,8 @@ import { Badge } from '@components/Badge';
 import cls from './QuestionCard.module.css';
 
 export const QuestionCard = ({ card }) => {
-	const { id, level, completed, description, question, answer } = card;
+	const { id, level, completed, question, answer } = card;
+	console.log('questionCard.id: ', id);
 	const navigate = useNavigate();
 	const levelVariant = level === 1 ? 'primary' : level === 2 ? 'warning' : 'alert';
 	const completedVariant = completed ? 'succes' : 'primary'
@@ -20,7 +21,10 @@ export const QuestionCard = ({ card }) => {
 				<label>Short answer: {id}</label>
 				<p className={cls.cardAnswer}>{answer}</p>
 			</div>
-			<Button onClick={() => navigate(`/question/:${id}`)}>View</Button>
+			<Button onClick={() => {
+				console.log(`/question/${id}`);
+				navigate(`/question/${id}`)
+			}}>View</Button>
 		</div>
 	);
 };
