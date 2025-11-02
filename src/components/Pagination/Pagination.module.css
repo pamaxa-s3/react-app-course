@@ -1,16 +1,10 @@
-.controlsContainer{
+.paginationBlock {
 	width: 100%;
 	max-width: 800px;
 	margin: 0 auto;
-	padding: 15px 0;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-}
-
-@media (max-width: 576px){
-	.controlsContainer {
-		flex-wrap: wrap-reverse;
-	}
 }

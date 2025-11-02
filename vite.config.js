@@ -12,7 +12,8 @@ export default defineConfig({
       "@page": path.resolve(__dirname, "./src/page"),
       "@loaders": path.resolve(__dirname, "./src/loaders"),
       "@ui": path.resolve(__dirname, "./src/UI"),
-      "@constans": path.resolve(__dirname, "./src/constans/")
+      "@icons": path.resolve(__dirname, "./src/icons"),
+      "@constans": path.resolve(__dirname, "./src/constans")
     }
   }
 })
